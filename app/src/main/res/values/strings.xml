@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">YourBudget</string>
+    <string name="hi">Hi</string>
+    <string name="create">Create a new Budget list</string>
+    <string name="edit">Edit an existing Budget list</string>
+    <string name="view">View Recent Lists</string>
+    <string name="tips">Tips for efficient Budget Management</string>
+    <string name="exit">Exit</string>
+    <string name="create_a_new_budget_list">Create a new Budget List</string>
+    <string name="list_name">List Name:</string>
+    <string name="duration">Duration:</string>
+    <string name="budget_limit">Budget Limit:    Rs.</string>
+    <string name="create_new_list">Create new List</string>
+    <string name="tipsText">1. Track Your Spending Habits. There are several free programs online for tracking how you currently spend your money.
+        \n2. Set a Realistic Budget. Budgets can be tricky, so set one that you can be comfortable with. Take your new knowledge from tracking your spending habits and map out expense categories such as rent, mortgage, utilities, entertainment and groceries. Look for areas where you think you could possibly cut back to increase the amount of money going into investments and/or savings.
+        \n3. Think of the Long Term, as Well as the Short. The week-to-week or month-to-month planning is necessary. However, planning ahead for emergencies, down payments for cars, improvements to your home, etc. are absolutely essential. Consider having your paychecks split into multiple accounts to ensure that you are putting money aside for the long term.
+        \n4. Get the Whole Family on Board. Being the enforcer of a budget is a tough job, especially when it comes to things like eating out. It can be easy to just run through a fast food restaurant when you’re tired and the kids are hungry. Instead, though, give them the option to help choose the menu for dinners. Having their buy-in on decisions like these will make your job less difficult.
+        \n5. Look for Ways to Increase Savings. There are many opportunities out there to help you pay less for the items you need. Consider couponing or becoming a rewards member to your most frequently visited stores.
+        \n6. Schedule Bill-Paying Days. Setting aside a time when you can really focus on getting things paid and taking care of anything unusual with a vendor is incredibly important. Whether that’s the same day every week or the 15th and the 30th, be sure to make it consistent. As the process can be tedious, find a way to treat yourself. A latte and pajamas are great ideas.
+        \n7. Spend Time Reevaluating Your Budget. Budgets change as the needs of your family change. Be prepared to make adjustments to your budget after several months of giving it a go. If you notice, for example, that you aren’t spending nearly as much on groceries as you thought you would, redirect some of those monies to an area where you could use a cushion.
+        \n8. Look for Ways to Make a Little Extra Cash. Put a few more dollars in your pocket by finding innovative ways to make money on the side.
+        \n9. Watch Credit Card Spending. Credit cards have their benefits, but a lot of people get themselves into trouble when they charge purchases with money they don’t have to spend. If you use a credit card to get the rewards, be sure to pay the balance off at the end of the month. Leaving a balance can accrue interest and finance charges which will leave you spending more for an item than it was actually worth.
+        \n10. Use Lists When Shopping. One of the best ways to stick to a budget is through the use of lists. Before you even walk through the door of the store, write down what it is you are going to purchase. Take the list with you and only purchase those items.</string>
+    <string-array name="menu">
+        <item>@string/create</item>
+        <item>@string/edit</item>
+        <item>@string/view</item>
+        <item>@string/tips</item>
+        <item>@string/exit</item>
+    </string-array>
+</resources>

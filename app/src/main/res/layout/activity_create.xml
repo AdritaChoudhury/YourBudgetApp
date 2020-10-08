@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_a_new_budget_list"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:text="@string/list_name"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.326" />
+
+    <EditText
+        android:id="@+id/editTextListName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0"
+        android:autofillHints="Enter list name"
+        android:labelFor="@id/textView6"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:text="@string/duration"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toStartOf="@+id/editTextBudgetLimit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/budget_limit"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601" />
+
+    <EditText
+        android:id="@+id/editTextBudgetLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Enter budget amount"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/textView8"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="92dp"
+        android:onClick="createList"
+        android:text="@string/create_new_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="209dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCreate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/editTextListName"
+        app:layout_constraintVertical_bias="0.193">
+
+        <RadioButton
+            android:id="@+id/radioButtonDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Day" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Month" />
+
+        <RadioButton
+            android:id="@+id/radioButtonYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Year" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
