@@ -31,12 +31,21 @@ public class BaseActivity extends AppCompatActivity {
                     Intent goToCreate = new Intent(listViewMenu.getContext(),CreateActivity.class);
                     listViewMenu.getContext().startActivity(goToCreate);
                 }
-                if(position==3) {
+                else if(position==1) {
+                    Intent addItems = new Intent(listViewMenu.getContext(),AddItemsActivity.class);
+                    listViewMenu.getContext().startActivity(addItems);
+                }
+                else if(position==2) {
+                    Intent viewList = new Intent(listViewMenu.getContext(),ViewListActivity.class);
+                    listViewMenu.getContext().startActivity(viewList);
+                }
+                else if(position==3) {
                     Intent goToTips = new Intent(listViewMenu.getContext(),ToolsActivity.class);
-                    listViewMenu.getContext().startActivities(new Intent[]{goToTips});
+                    listViewMenu.getContext().startActivity(goToTips);
                 }
                 else if(position==4){
                     finish();
+                    System.exit(0);
                 }
             }
         });

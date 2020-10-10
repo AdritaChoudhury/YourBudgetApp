@@ -54,5 +54,10 @@ public class CreateActivity extends AppCompatActivity {
         editor.putString("ListName",nameList);
         editor.putInt("BudgetLimit",budgetLimit);
         editor.apply();
+
+        Intent addItems = new Intent();
+        addItems.setClass(this,AddItemsActivity.class);
+        startActivity(addItems);
+        finish();
     }
 }

@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddItemsActivity"></activity>
+        <activity android:name=".ViewListActivity"></activity>
+        <activity android:name=".ListDatabase" />
+        <activity android:name=".DBcontroller" />
+        <activity android:name=".DBhelper" />
+        <activity android:name=".AddItemsActivity" />
         <activity android:name=".ToolsActivity" />
         <activity android:name=".CreateActivity" />
         <activity android:name=".BaseActivity" />
