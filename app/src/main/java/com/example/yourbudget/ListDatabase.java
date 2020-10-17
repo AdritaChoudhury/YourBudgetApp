@@ -55,18 +55,18 @@ class ListDetails {
     private int duration;
     private int budget;
 
-    public ListDetails () {
+    public ListDetails() {
 
     }
 
-    public ListDetails (int id, String name, int duration, int budget) {
+    public ListDetails(int id, String name, int duration, int budget) {
         this.id = id;
         this.name = name;
         this.duration = duration;
         this.budget = budget;
     }
 
-    public ListDetails (String name, int duration, int budget) {
+    public ListDetails(String name, int duration, int budget) {
         this.name = name;
         this.duration = duration;
         this.budget = budget;
@@ -84,19 +84,24 @@ class ListDetails {
         return name;
     }
 
-    public void set_name(String name) { this.name = name; }
+    public void set_name(String name) {
+        this.name = name;
+    }
 
-    public int get_duration() { return duration; }
+    public int get_duration() {
+        return duration;
+    }
 
-    public void set_duration(int duration) { this.duration = duration; }
+    public void set_duration(int duration) {
+        this.duration = duration;
+    }
 
-    public int get_budget() { return budget; }
+    public int get_budget() {
+        return budget;
+    }
 
-    public void set_budget(int budget) { this.budget = budget; }
+    public void set_budget(int budget) {
+        this.budget = budget;
+    }
 
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> 8edb480c38a5006a218bcb5fa3ff5f28ebb04327
