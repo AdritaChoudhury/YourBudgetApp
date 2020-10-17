@@ -21,6 +21,15 @@
         \n8. Look for Ways to Make a Little Extra Cash. Put a few more dollars in your pocket by finding innovative ways to make money on the side.
         \n9. Watch Credit Card Spending. Credit cards have their benefits, but a lot of people get themselves into trouble when they charge purchases with money they don’t have to spend. If you use a credit card to get the rewards, be sure to pay the balance off at the end of the month. Leaving a balance can accrue interest and finance charges which will leave you spending more for an item than it was actually worth.
         \n10. Use Lists When Shopping. One of the best ways to stick to a budget is through the use of lists. Before you even walk through the door of the store, write down what it is you are going to purchase. Take the list with you and only purchase those items.</string>
+    <string name="add_items_to_the_budget_list">Add Items to the Budget List</string>
+    <string name="item_name">Item Name</string>
+    <string name="cost">Cost</string>
+    <string name="add_item">Add Item</string>
+    <string name="display_query">Display Query</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="total_cost">Total Cost</string>
+    <string name="list_items">List Items:</string>
+    <string name="save_list">Save List</string>
     <string-array name="menu">
         <item>@string/create</item>
         <item>@string/edit</item>
