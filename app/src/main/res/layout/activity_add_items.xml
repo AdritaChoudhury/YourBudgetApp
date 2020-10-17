@@ -33,14 +33,14 @@
         app:layout_constraintVertical_bias="0.819">
 
         <EditText
-            android:id="@+id/editText_name"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Item Name"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText_cost"
+            android:id="@+id/editTextCost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cost"
@@ -60,28 +60,28 @@
         app:layout_constraintVertical_bias="0.637">
 
         <Button
-            android:id="@+id/button_add"
+            android:id="@+id/buttonAdd"
             android:layout_width="98dp"
             android:layout_height="60dp"
             android:text="Add Item"
             android:textSize="10sp" />
 
         <Button
-            android:id="@+id/button_query"
+            android:id="@+id/buttonQuery"
             android:layout_width="98dp"
             android:layout_height="60dp"
             android:text="Display Query"
             android:textSize="10sp" />
 
         <Button
-            android:id="@+id/button_del"
+            android:id="@+id/buttonDelete"
             android:layout_width="98dp"
             android:layout_height="60dp"
             android:text="Delete Item"
             android:textSize="10sp" />
 
         <Button
-            android:id="@+id/button_tot"
+            android:id="@+id/buttonTotal"
             android:layout_width="98dp"
             android:layout_height="60dp"
             android:padding="1dp"

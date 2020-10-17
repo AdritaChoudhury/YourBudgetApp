@@ -45,11 +45,11 @@ public class ViewListActivity extends AppCompatActivity {
                 data.clear();
                 adapter.notifyDataSetChanged();
 
-                List<BudgetList> budList = dbCon.getAllItems();
+                List<ListDetails> budList = dbCon.getAllLists();
 
                 for (int i = 0; i < budList.size(); i++) {
-                    BudgetList bl = budList.get(i);
-                    String info = "ID : " + bl.get_id() + ", " + "Name : " + bl.get_name() + ", " + "Cost : " + bl.get_cost();
+                    ListDetails bl = budList.get(i);
+                    String info = "ID : " + bl.get_id() + ", " + "Name : " + bl.get_name() + ", " + "Budget : " + bl.get_budget();
                     data.add(info);
                     System.out.println(info);
                 }

@@ -3,6 +3,7 @@ package com.example.yourbudget;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,8 +18,9 @@ import java.util.List;
 
 public class AddItemsActivity extends AppCompatActivity {
 
-    EditText edt_name, edt_cost;
+    EditText editTextName, editTextCost;
     Button add_btn, del_btn, query_btn, tot_btn;
+    int listId;
 
     //DB
     private DBController dbCon;
@@ -32,18 +34,20 @@ public class AddItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_items);
+        SharedPreferences preferences = getSharedPreferences("LIST",MODE_PRIVATE);
+        if(preferences.contains("listId")) listId = preferences.getInt("listId", 0);
 
         // UI
-        add_btn = (Button) findViewById(R.id.button_add);
-        del_btn = (Button) findViewById(R.id.button_del);
-        query_btn = (Button) findViewById(R.id.button_query);
-        tot_btn = (Button) findViewById(R.id.button_tot);
-        edt_name = (EditText) findViewById(R.id.editText_name);
-        edt_cost = (EditText) findViewById(R.id.editText_cost);
+        add_btn = findViewById(R.id.buttonAdd);
+        del_btn = findViewById(R.id.buttonDelete);
+        query_btn = findViewById(R.id.buttonQuery);
+        tot_btn = findViewById(R.id.buttonTotal);
+        editTextName = findViewById(R.id.editTextName);
+        editTextCost = findViewById(R.id.editTextCost);
 
 
         // ListView
-        lv = (ListView) findViewById(R.id.listView);
+        lv = findViewById(R.id.listView);
         data = new ArrayList<>();
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
         lv.setAdapter(adapter);
@@ -56,26 +60,26 @@ public class AddItemsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String name = edt_name.getText().toString();
-                int cost = Integer.parseInt(edt_cost.getText().toString());
+                String name = editTextName.getText().toString();
+                int cost = Integer.parseInt(editTextCost.getText().toString());
 
-                if (name == null || TextUtils.isEmpty(name)) {
-                    edt_name.setError("Name field is empty/not valid");
+                if (TextUtils.isEmpty(name)) {
+                    editTextName.setError("Name field is empty/not valid");
                     return;
                 }
                 if (cost == 0) {
-                    edt_cost.setError("Address field is empty/not valid");
+                    editTextCost.setError("Address field is empty/not valid");
                     return;
                 }
 
-                BudgetList budgetList = new BudgetList(name, cost);
-                dbCon.addItem(budgetList);
+                BudgetList budgetList = new BudgetList(name, cost, listId);
+                dbCon.addItems(budgetList);
                 Toast.makeText(AddItemsActivity.this, "Record Added", Toast.LENGTH_SHORT).show();
 
                 data.clear();
                 adapter.notifyDataSetChanged();
 
-                List<BudgetList> budList = dbCon.getAllItems();
+                List<BudgetList> budList = dbCon.getAllItems(listId);
 
                 for (int i = 0; i < budList.size(); i++) {
                     BudgetList bl = budList.get(i);
@@ -92,17 +96,17 @@ public class AddItemsActivity extends AppCompatActivity {
         del_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = edt_name.getText().toString();
-                if (name == null || TextUtils.isEmpty(name)) {
-                    edt_name.setError("Name field is empty/not valid");
+                String name = editTextName.getText().toString();
+                if (TextUtils.isEmpty(name)) {
+                    editTextName.setError("Name field is empty/not valid");
                     return;
                 }
 
-                List<BudgetList> budList = dbCon.getAllItems();
+                List<BudgetList> budList = dbCon.getAllItems(listId);
 
                 for (int i = 0; i < budList.size(); i++) {
                     if (budList.get(i).get_name().equals(name)) {
-                        BudgetList bl = budList.get(i);
+                        int bl = budList.get(i).get_id();
                         dbCon.deleteItem(bl);
                     }
                 }
@@ -127,16 +131,16 @@ public class AddItemsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String name = edt_name.getText().toString();
-                if (name == null || TextUtils.isEmpty(name)) {
-                    edt_name.setError("Name field is empty/not valid");
+                String name = editTextName.getText().toString();
+                if (TextUtils.isEmpty(name)) {
+                    editTextName.setError("Name field is empty/not valid");
                     return;
                 }
 
                 data.clear();
                 adapter.notifyDataSetChanged();
 
-                List<BudgetList> budList = dbCon.getAllItems();
+                List<BudgetList> budList = dbCon.getAllItems(listId);
 
                 for (int i = 0; i < budList.size(); i++) {
                     if (budList.get(i).get_name().equals(name)) {
@@ -158,7 +162,7 @@ public class AddItemsActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
 
                 int total=0;
-                List<BudgetList> budList = dbCon.getAllItems();
+                List<BudgetList> budList = dbCon.getAllItems(listId);
                 for (int i = 0; i < budList.size(); i++) {
                     BudgetList bl = budList.get(i);
                     String info = "ID : " + bl.get_id() + ", " + "Name : " + bl.get_name()
