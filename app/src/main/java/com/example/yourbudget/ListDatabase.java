@@ -94,4 +94,9 @@ class ListDetails {
 
     public void set_budget(int budget) { this.budget = budget; }
 
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 8edb480c38a5006a218bcb5fa3ff5f28ebb04327
